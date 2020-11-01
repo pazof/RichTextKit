@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using Topten.RichTextKit.Utils;
@@ -31,7 +32,7 @@ namespace Topten.RichTextKit.Test
 
             // Read the test file
             var location = System.IO.Path.GetDirectoryName(typeof(LineBreakTests).Assembly.Location);
-            var lines = System.IO.File.ReadAllLines(System.IO.Path.Combine(location, "TestData\\GraphemeBreakTest.txt"));
+            var lines = System.IO.File.ReadAllLines(System.IO.Path.Combine(location, Path.Combine("TestData", "GraphemeBreakTest.txt")));
 
             // Process each line
             var tests = new List<Test>();
